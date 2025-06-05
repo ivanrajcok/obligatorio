@@ -1,0 +1,2 @@
+class CodigoNoEncontrado(Exception):
+    pass

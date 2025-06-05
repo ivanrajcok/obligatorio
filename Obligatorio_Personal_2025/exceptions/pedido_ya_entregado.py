@@ -1,0 +1,2 @@
+class PedidoYaEntregado(Exception):
+    pass

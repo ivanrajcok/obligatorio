@@ -1,0 +1,2 @@
+class ClienteYaExiste(Exception):
+    pass

@@ -1,0 +1,2 @@
+class PiezaYaExiste(Exception):
+    pass
