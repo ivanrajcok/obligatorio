@@ -23,15 +23,15 @@ import math
 
 class Sistema:
     def __init__(self):
-        self.maquinas=[]
-        self.clientes=[]
-        self.pedidos=[]
-        self.piezas=[]
+        self.maquinas = []
+        self.clientes = []
+        self.pedidos = []
+        self.piezas = []
 
-        self.contador_codigo_pieza=1
+        self.contador_codigo_pieza= 1
         self.contador_codigo_maquina = 1
-        self.contador_id_cliente=1
-        self.contador_pedidos=1
+        self.contador_id_cliente= 1
+        self.contador_pedidos= 1
 
     
 
@@ -48,12 +48,12 @@ class Sistema:
 
         
         nueva_pieza = Pieza(
-            codigo=self.contador_codigo_pieza,
-            descripcion=descripcion,
-            costo=costo_unitario,
-            lote=lote_reposicion,
-            cantidad=cantidad_disponible,
-            reposiciones=[]
+            codigo = self.contador_codigo_pieza,
+            descripcion = descripcion,
+            costo = costo_unitario,
+            lote = lote_reposicion,
+            cantidad = cantidad_disponible,
+            reposiciones = []
         )
         self.piezas.append(nueva_pieza)
         self.contador_codigo_pieza += 1
@@ -72,8 +72,8 @@ class Sistema:
                 raise MaquinaYaExiste("Ya existe una máquina con esa descripción.")
 
         nueva_maquina = Maquina(
-            codigo=self.contador_codigo_maquina,
-            descripcion=descripcion
+            codigo = self.contador_codigo_maquina,
+            descripcion = descripcion
         )
 
         costo_total = 0
@@ -122,11 +122,11 @@ class Sistema:
                     raise ClienteYaExiste("Ya existe un cliente con esa cédula.")
 
             nuevo_cliente = Cliente_particular(
-                id=self.contador_id_cliente,
-                telefono=telefono,
-                correo_electronico=correo,
-                cedula=cedula,
-                nombre_completo=nombre_completo
+                id = self.contador_id_cliente,
+                telefono = telefono,
+                correo_electronico = correo,
+                cedula = cedula,
+                nombre_completo = nombre_completo
             )
 
         else:  
@@ -144,12 +144,12 @@ class Sistema:
                     raise ClienteYaExiste("Ya existe una empresa con ese RUT.")
 
             nuevo_cliente = Empresa(
-                id=self.contador_id_cliente,
-                telefono=telefono,
-                correo_electronico=correo,
-                rut=rut,
-                nombre=nombre,
-                pagina_web=pagina_web
+                id = self.contador_id_cliente,
+                telefono = telefono,
+                correo_electronico = correo,
+                rut = rut,
+                nombre = nombre,
+                pagina_web = pagina_web
             )
 
         self.clientes.append(nuevo_cliente)
@@ -189,12 +189,12 @@ class Sistema:
             precio_base *= 0.8  
 
         nuevo_pedido = Pedido(
-            cliente=cliente,
-            maquina=maquina,
-            fecha_recibido=fecha_actual,
-            fecha_entregado=fecha_entrega,
-            estado=estado,
-            precio=precio_base
+            cliente = cliente,
+            maquina = maquina,
+            fecha_recibido = fecha_actual,
+            fecha_entregado = fecha_entrega,
+            estado = estado,
+            precio = precio_base
         )
 
         self.pedidos.append(nuevo_pedido)
@@ -235,10 +235,10 @@ class Sistema:
 
         costo_total = cantidad_lotes * pieza.costo
         nueva_reposicion = Reposicion(
-            pieza=pieza,
-            cantidad_lotes=cantidad_lotes,
-            fecha=fecha_actual,
-            costo=costo_total
+            pieza = pieza,
+            cantidad_lotes = cantidad_lotes,
+            fecha = fecha_actual,
+            costo = costo_total
         )
 
         pieza.reposiciones.append(nueva_reposicion)
